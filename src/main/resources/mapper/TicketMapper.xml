@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Lgq_travel.springboot.mapper.TicketMapper">
+    <resultMap id="TicketMap" type="Ticket">
+        <id property="id" column="id" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="sid" column="sid" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="DPrice" column="Dprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="CPrice" column="cprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="message" column="message" javaType="String" jdbcType="VARCHAR"/>
+        <result property="DPNum" column="DPNum" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="CPNum" column="CPNum" javaType="Integer" jdbcType="INTEGER"/>
+        <association property="scenic" javaType="Scenic">
+            <id property="id" column="sid"/>
+            <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+            <result property="address" column="address" javaType="String" jdbcType="VARCHAR"/>
+            <result property="theme" column="theme" javaType="String" jdbcType="VARCHAR"/>
+            <result property="message" column="message" javaType="String" jdbcType="VARCHAR"/>
+            <result property="pollution" column="pollution" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="hot" column="hot" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="state" column="state" javaType="Integer" jdbcType="INTEGER"/>
+            <result property="img" column="img" javaType="String" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+
+    <select id="selectTicketList" parameterType="Integer" resultType="Ticket">
+        select *
+        from ticket
+        where sid = #{sid}
+    </select>
+
+    <select id="postCountByQueryVo" parameterType="QueryVo" resultType="Integer">
+        select count(1)
+        from ticket
+    </select>
+
+    <select id="selectPostListByQueryVo" parameterType="QueryVo" resultType="Ticket">
+        select t.id,t.name,t.message,t.Dprice,t.Cprice,t.DPNum,t.CPNum,s.name
+        from ticket t left join scenic s
+        on s.id=t.sid
+        <where>
+            <if test="name != null and name != ''">
+                t.name like "%"#{name}"%"
+            </if>
+        </where>
+        order by t.id desc
+        limit #{starRow},#{size}
+    </select>
+
+    <!--    //获得最低票价-->
+    <select id="selectPriceBySid" resultType="double" parameterType="Integer">
+        select min(Cprice) from ticket where sid=#{sid}
+    </select>
+</mapper>

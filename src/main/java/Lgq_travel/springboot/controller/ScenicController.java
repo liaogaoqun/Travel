@@ -2,7 +2,10 @@ package Lgq_travel.springboot.controller;
 
 import Lgq_travel.springboot.entity.QueryVo;
 import Lgq_travel.springboot.entity.Scenic;
+import Lgq_travel.springboot.entity.Ticket;
+import Lgq_travel.springboot.mapper.TicketMapper;
 import Lgq_travel.springboot.service.ScenicService;
+import Lgq_travel.springboot.service.TicketService;
 import Lgq_travel.springboot.utils.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,9 @@ import java.util.Map;
 public class ScenicController {
     @Autowired
     private ScenicService scenicService;
+    @Autowired
+    private TicketService ticketService;
+
     @RequestMapping(value="/getScenicList")
     public @ResponseBody
     Map<String,Object> getScenicList(){
@@ -45,8 +51,23 @@ public class ScenicController {
 //        model.addAttribute("page", page);
 //        return "user/scenicList";
 //    }
+    @RequestMapping(value = "/getScenicPageForUser")
     public String getScenicPageForUser(Model model,QueryVo vo,HttpServletRequest request){
         Page<Scenic> page = scenicService.selectPageByQueryVo(vo);
+        //设置景点门票信息并传回Page
+        for (Scenic scenic:page.getRows()){
+            List<Ticket> ticketList = ticketService.selectTicketListBySid(scenic.getId());
+            double price = ticketService.selectTickerPriceBySid(scenic.getId());
+            scenic.setTickets(ticketList);
+            scenic.setPrice(price);
+        }
+        //根据前端返回的Address参数判断目前是不是根据地址获得景点信息
+        String addrParameter = request.getParameter("addr");
+        if (addrParameter != null){
+            model.addAttribute("addrParameter",addrParameter);
+        }
+        model.addAttribute("page",page);
+        return "user/scenicList";
     }
 
 }

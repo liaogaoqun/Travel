@@ -1,15 +1,35 @@
 package Lgq_travel.springboot.entity;
 
+import java.util.List;
+
 public class Scenic {
-    private int id;
+    private Integer id;
     private String name;
     private String address;
     private String theme;
     private String message;
-    private int pollution; //最大可容纳人数
-    private int hot;   //热度
-    private int state; //状态
+    private Integer pollution; //最大可容纳人数
+    private Integer hot;   //热度
+    private Integer state; //状态
     private String img; //图片
+    private List<Ticket> tickets; //门票
+    private double price; //门票价格
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     @Override
     public String toString() {
@@ -26,11 +46,11 @@ public class Scenic {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -66,27 +86,27 @@ public class Scenic {
         this.message = message;
     }
 
-    public int getPollution() {
+    public Integer getPollution() {
         return pollution;
     }
 
-    public void setPollution(int pollution) {
+    public void setPollution(Integer pollution) {
         this.pollution = pollution;
     }
 
-    public int getHot() {
+    public Integer getHot() {
         return hot;
     }
 
-    public void setHot(int hot) {
+    public void setHot(Integer hot) {
         this.hot = hot;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 

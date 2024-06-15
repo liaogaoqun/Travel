@@ -2,15 +2,16 @@ package Lgq_travel.springboot.entity;
 
 public class QueryVo {
     private String userid;
-    private String name;
-    private String addr;
-    private String theme;
+    private String name;     //景点名字
+    private String address;  //地址
+    private String theme;   //主题
     //当前页
     private Integer page;
-    //每页数
+    //每页数量
     private Integer size = 10;
     //开始行
     private Integer startRow = 0;
+    private Integer hot;    //景点热度
 
     public Integer getPage() {
         return page;
@@ -44,14 +45,6 @@ public class QueryVo {
         this.name = name;
     }
 
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
     public String getTheme() {
         return theme;
     }
@@ -66,5 +59,21 @@ public class QueryVo {
 
     public void setUserid(String userid) {
         this.userid = userid;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getHot() {
+        return hot;
+    }
+
+    public void setHot(Integer hot) {
+        this.hot = hot;
     }
 }

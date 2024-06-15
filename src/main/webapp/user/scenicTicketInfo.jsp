@@ -18,9 +18,6 @@
 			<!-- 引入header.jsp -->
 			<jsp:include page="header.jsp"></jsp:include>
 
-
-
-
             <!-- 景点门票 -->
             <div class="container-fluid" style="padding-left: 0px">
                 <div class="col-md-12" style="height:20px;">

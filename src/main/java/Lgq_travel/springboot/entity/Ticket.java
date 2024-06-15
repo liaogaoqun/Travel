@@ -1,13 +1,13 @@
 package Lgq_travel.springboot.entity;
 
 public class Ticket {
-    private int id;
-    private int sid; //旅游景点id
-    private float DPrice;  //成人票价
-    private float CPrice; //儿童票价
+    private Integer id;
+    private Integer sid; //旅游景点id
+    private Double DPrice;  //成人票价
+    private Double CPrice; //儿童票价
     private String message; //详情信息
-    private int DPNum;   //成人票数量
-    private int CPNum;  //儿童票数量
+    private Integer DPNum;   //成人票数量
+    private Integer CPNum;  //儿童票数量
 
     @Override
     public String toString() {
@@ -22,35 +22,35 @@ public class Ticket {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getSid() {
+    public Integer getSid() {
         return sid;
     }
 
-    public void setSid(int sid) {
+    public void setSid(Integer sid) {
         this.sid = sid;
     }
 
-    public float getDPrice() {
+    public Double getDPrice() {
         return DPrice;
     }
 
-    public void setDPrice(float DPrice) {
+    public void setDPrice(Double DPrice) {
         this.DPrice = DPrice;
     }
 
-    public float getCPrice() {
+    public Double getCPrice() {
         return CPrice;
     }
 
-    public void setCPrice(float CPrice) {
+    public void setCPrice(Double CPrice) {
         this.CPrice = CPrice;
     }
 
@@ -62,19 +62,19 @@ public class Ticket {
         this.message = message;
     }
 
-    public int getDPNum() {
+    public Integer getDPNum() {
         return DPNum;
     }
 
-    public void setDPNum(int DPNum) {
+    public void setDPNum(Integer DPNum) {
         this.DPNum = DPNum;
     }
 
-    public int getCPNum() {
+    public Integer getCPNum() {
         return CPNum;
     }
 
-    public void setCPNum(int CPNum) {
+    public void setCPNum(Integer CPNum) {
         this.CPNum = CPNum;
     }
 }

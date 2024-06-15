@@ -3,10 +3,13 @@ package Lgq_travel.springboot.utils;
 import java.util.List;
 
 public class Page<T> {
-
+	//总条数
 	private int total;
+	//当前页
 	private int page;
+	//每页数量
 	private int size;
+	//结果集
     private List<T> rows;
 	public int getTotal() {
 		return total;
