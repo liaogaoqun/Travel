@@ -83,7 +83,7 @@ public class User {
     }
 
     public void setBirthday(Date birthday) {
-        Birthday = birthday;
+        this.Birthday = birthday;
     }
 
     public int getState() {
@@ -99,7 +99,7 @@ public class User {
     }
 
     public void setTePhone(String tePhone) {
-        TePhone = tePhone;
+        this.TePhone = tePhone;
     }
 
 }
