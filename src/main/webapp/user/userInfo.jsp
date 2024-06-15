@@ -44,7 +44,7 @@ body {
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-6">
-							<label style="padding-top: 7px">${user.email}</label>
+							<label style="padding-top: 7px">${user.Email}</label>
 						</div>
 					</div>
 					<div class="form-group">
@@ -53,18 +53,30 @@ body {
 							<label style="padding-top: 7px">${user.name}</label>
 						</div>
 					</div>
-					<div class="form-group opt">
-						<label for="inlineRadio1" class="col-sm-2 control-label">性别</label>
-						<div class="col-sm-6">
-							<label style="padding-top: 7px">${user.sex}</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="date" class="col-sm-2 control-label">生日</label>
-						<div class="col-sm-10">
-							<label style="padding-top: 7px">${user.birthday}</label>
-						</div>
-					</div>
+<%--					<div class="form-group opt">--%>
+<%--						<label for="inlineRadio1" class="col-sm-2 control-label">性别</label>--%>
+<%--						<div class="col-sm-6">--%>
+<%--							<label style="padding-top: 7px">${user.Sex}</label>--%>
+<%--						</div>--%>
+<%--					</div>--%>
+<%--					<div class="form-group">--%>
+<%--						<label for="date" class="col-sm-2 control-label">生日</label>--%>
+<%--						<div class="col-sm-10">--%>
+<%--							<label style="padding-top: 7px">${user.Birthday}</label>--%>
+<%--						</div>--%>
+<%--					</div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="date" class="col-sm-2 control-label">电话号码</label>--%>
+<%--                        <div class="col-sm-10">--%>
+<%--                            <label style="padding-top: 7px">${user.TePhone}</label>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+                    <div class="form-group">
+                        <label for="date" class="col-sm-2 control-label">用户状态</label>
+                        <div class="col-sm-10">
+                            <label style="padding-top: 7px">${user.state}</label>
+                        </div>
+                    </div>
 					<div class="form-group">
 						<label for="date" class="col-sm-2 control-label">操作</label>
 						<div class="col-sm-8" style="padding-top: 5px">

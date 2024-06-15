@@ -34,7 +34,7 @@
                                 <div class="js_wrap claerdix" style="background-color: whitesmoke;">
                                     <div class="js_con clearfix">
                                         <div class="js_l">
-                                            <a href="#"><img src="../${scenic.pic }"></a>
+                                            <a href="#"><img src="../${scenic.img}"></a>
                                         </div>
                                         <div class="js_c">
                                             <p>
@@ -43,9 +43,9 @@
                                             <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点主题：</font>
                                                     ${scenic.theme}</p>
                                             <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点地址：</font>
-                                                    ${scenic.addr}</p>
+                                                    ${scenic.address}</p>
                                             <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点特色：</font>
-                                                    ${scenic.feature}</p>
+                                                    ${scenic.message}</p>
                                         </div>
                                         <div class="js_r">
                                             <p>&nbsp;</p>
@@ -78,7 +78,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <c:forEach items="${scenic.ticketList}" var="ticket">
+                                    <c:forEach items="${scenic.tickets}" var="ticket">
                                         <div class="js_con clearfix">
                                             <div class="js_c" style="width:120px">
                                                 <p>
@@ -87,13 +87,13 @@
                                             </div>
                                             <div class="js_c" style="width:260px">
                                                 <p>
-                                                    <font style="color: #9d9d9d">${ticket.explain}</font>
+                                                    <font style="color: #9d9d9d">${ticket.message}</font>
                                                 </p>
                                             </div>
                                             <div class="js_c">
                                                 <p>
-                                                    <font style="color: #9d9d9d">${ticket.dprice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <font style="color: #9d9d9d">${ticket.mprice}</font>
+                                                    <font style="color: #9d9d9d">${ticket.DPrice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <font style="color: #9d9d9d">${ticket.CPrice}</font>
                                                 </p>
                                             </div>
                                             <div class="js_r" style="padding-right: 11px; ">

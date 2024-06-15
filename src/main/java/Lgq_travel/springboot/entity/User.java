@@ -5,6 +5,31 @@ import java.util.Stack;
 
 public class User {
     private int userid;
+    private String name; //昵称
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid=" + userid +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Birthday=" + Birthday +
+                ", state=" + state +
+                ", TePhone='" + TePhone + '\'' +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String username;
     private String password;
     private String Email;
@@ -77,17 +102,4 @@ public class User {
         TePhone = tePhone;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userid=" + userid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Sex='" + Sex + '\'' +
-                ", Birthday=" + Birthday +
-                ", state=" + state +
-                ", TePhone='" + TePhone + '\'' +
-                '}';
-    }
 }

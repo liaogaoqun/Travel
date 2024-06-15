@@ -3,17 +3,14 @@ package Lgq_travel.springboot.entity;
 public class Ticket {
     private Integer id;
     private Integer sid; //旅游景点id
-    private Double DPrice;  //成人票价
-    private Double CPrice; //儿童票价
-    private String message; //详情信息
-    private Integer DPNum;   //成人票数量
-    private Integer CPNum;  //儿童票数量
+    private String name; //门票名称
 
     @Override
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
                 ", sid=" + sid +
+                ", name='" + name + '\'' +
                 ", DPrice=" + DPrice +
                 ", CPrice=" + CPrice +
                 ", message='" + message + '\'' +
@@ -21,6 +18,20 @@ public class Ticket {
                 ", CPNum=" + CPNum +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private Double DPrice;  //成人票价
+    private Double CPrice; //儿童票价
+    private String message; //详情信息
+    private Integer DPNum;   //成人票数量
+    private Integer CPNum;  //儿童票数量
 
     public Integer getId() {
         return id;

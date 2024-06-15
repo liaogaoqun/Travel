@@ -51,6 +51,7 @@ public class ScenicController {
 //        model.addAttribute("page", page);
 //        return "user/scenicList";
 //    }
+
     /**
      * 为用户展示所有的景点信息getScenicPageForUser
      */

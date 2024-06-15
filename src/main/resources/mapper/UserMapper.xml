@@ -30,6 +30,7 @@
 
     <insert id="userRegister" parameterType="User">
         insert into user(
+        name,
         username,
         password,
         Email,
@@ -39,6 +40,7 @@
         state
         )
         <trim prefix=" values(" suffix=")" suffixOverrides=",">
+            #{name,jdbcType=VARCHAR}
             #{username,jdbcType=VARCHAR},
             #{password,jdbcType=VARCHAR},
             #{Email,jdbcType=VARCHAR},

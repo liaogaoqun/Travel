@@ -18,7 +18,7 @@
         select *
         from scenic
         order by hot desc
-            limit #{starRow}, #{size}
+            limit #{startRow}, #{size}
     </select>
 
     <select id="selectScenicById" parameterType="Integer" resultType="Scenic">

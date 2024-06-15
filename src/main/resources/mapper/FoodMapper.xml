@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Lgq_travel.springboot.mapper.FoodMapper">
+    <select id="selectAllFood" resultType="Food">
+        select *
+        from food
+    </select>
+
+    <select id="selectFoodById" parameterType="Integer" resultType="Food">
+        selct
+        * from food
+        where id =
+        #{id}
+    </select>
+
+    <select id="postCountByQueryVo" resultType="Integer" parameterType="QueryVo">
+        select count(1)
+        from food
+    </select>
+
+    <select id="selectPostListByQueryVo" parameterType="QueryVo" resultType="Food">
+        select *
+        from food
+        order by id
+            limit #{startRow}, #{size}
+    </select>
+</mapper>

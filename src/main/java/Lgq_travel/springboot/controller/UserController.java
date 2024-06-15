@@ -31,24 +31,33 @@ public class UserController {
         System.out.println("password:" + user.getPassword());
         //验证码是否正确，toUpperCase（）：小写转大写
         if (verifyCodeValue.equals(inputVerifyCode.toUpperCase())) {
+
             user.setPassword(MD5Utils.md5((String) user.getPassword()));
             User u = userService.UserLogin(user);
             if (u == null) {
                 model.addAttribute("errorInfo", "用户名，密码错误或者账户未激活，请重新检查");
                 return "user/login";
             } else {
-                //获取自动登录状态
-                String autoLogin = request.getParameter("autoLogin");
-                if ("autoLogin".equals(autoLogin)) {
-                    //导入Cookie
-                    Cookie cookie_username = new Cookie("cookie_username", user.getUsername());
-                    cookie_username.setMaxAge(10 * 60);
-                    Cookie cookie_password = new Cookie("cookie_password", user.getPassword());
-                    cookie_password.setMaxAge(10 * 60);
+                if (u.getUserid() != 0) {
+                    //获取自动登录状态
+                    String autoLogin = request.getParameter("autoLogin");
+                    if ("autoLogin".equals(autoLogin)) {
+                        //要自动登录
+                        //创建存储用户名的cookie
+                        Cookie cookie_username = new Cookie("cookie_username",user.getUsername());
+                        cookie_username.setMaxAge(10*60);
+                        //创建存储密码的cookie
+                        Cookie cookie_password = new Cookie("cookie_password",user.getPassword());
+                        cookie_password.setMaxAge(10*60);
+                        response.addCookie(cookie_username);
+                        response.addCookie(cookie_password);
+                    }
+                    //将user对象存到session中
+                    session.setAttribute("user", u);
+                    return "redirect:/user";
                 }
-                session.setAttribute("user", u);
-                return "redirect:/user";
-//                return  "redirect:/user/userInfo";
+                model.addAttribute("errorInfo","用户名id为空！");
+                return "user/login";
             }
         } else {
             model.addAttribute("errorInfo", "验证码错误，请重新输入");
@@ -161,15 +170,15 @@ public class UserController {
 
     /*用户注销*/
     @RequestMapping(value = "/logout")
-    public String Logout(HttpServletRequest request,HttpServletResponse response){
+    public String Logout(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         //删除session
         session.removeAttribute("user");
 
         //删除Cookies
-        Cookie cookie_username =new Cookie("cookie_username","");
+        Cookie cookie_username = new Cookie("cookie_username", "");
         cookie_username.setMaxAge(0);
-        Cookie cookie_password =new Cookie("cookie_password","");
+        Cookie cookie_password = new Cookie("cookie_password", "");
         cookie_password.setMaxAge(0);
 
         response.addCookie(cookie_username);
