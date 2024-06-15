@@ -1,5 +1,7 @@
 package Lgq_travel.springboot.controller;
 
+import Lgq_travel.springboot.entity.Scenic;
+import Lgq_travel.springboot.service.ScenicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,8 +11,8 @@ import java.util.List;
 
 @Controller
 public class IndexController {
-//    @Autowired
-//    ScenicService scenicService;
+    @Autowired
+    ScenicService scenicService;
 //    @Autowired
 //    FoodService foodService;
 //    @Autowired
@@ -64,11 +66,11 @@ public class IndexController {
      */
     @RequestMapping(value = "/user")
     public String testUserIndex(Model model){
-//        List<Scenic> list =  scenicService.selectScenicList();
+        List<Scenic> list =  scenicService.selectScenicList();
 //        List<TastyFood> listFood =  foodService.selectFoodList();
-//        list = list.subList(0, 3);
+        list = list.subList(0, 3);
 //        listFood = listFood.subList(0, 3);
-//        model.addAttribute("list",list);
+        model.addAttribute("list",list);
 //        model.addAttribute("listFood",listFood);
 
         return "user/index";

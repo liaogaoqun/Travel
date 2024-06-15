@@ -39,7 +39,7 @@ public class UserController {
             } else {
                 //获取自动登录状态
                 String autoLogin = request.getParameter("autoLogin");
-                if (autoLogin.equals("autoLogin")) {
+                if ("autoLogin".equals(autoLogin)) {
                     //导入Cookie
                     Cookie cookie_username = new Cookie("cookie_username", user.getUsername());
                     cookie_username.setMaxAge(10 * 60);
