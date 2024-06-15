@@ -16,4 +16,6 @@ public interface ScenicMapper {
     Integer postCountByQueryVo(QueryVo vo);
     //输出一定数量景点
     List<Scenic> selectPostScience(QueryVo vo);
+    //通过id获得景点
+    Scenic selectScenicById(Integer id);
 }

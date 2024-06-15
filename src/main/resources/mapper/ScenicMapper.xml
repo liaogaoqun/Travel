@@ -4,17 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Lgq_travel.springboot.mapper.ScenicMapper">
     <select id="selectAllScience" resultType="Scenic">
-        select * from scenic
+        select *
+        from scenic
         order by hot desc
     </select>
 
     <select id="postCountByQueryVo" parameterType="QueryVo" resultType="int">
-        select count(1) from scenic
+        select count(1)
+        from scenic
     </select>
 
     <select id="selectPostScience" parameterType="QueryVo" resultType="Scenic">
-        select * from scenic
+        select *
+        from scenic
         order by hot desc
-        limit #{starRow},#{size}
+            limit #{starRow}, #{size}
+    </select>
+
+    <select id="selectScenicById" parameterType="Integer" resultType="Scenic">
+        select *
+        from scenic
+        where id = #{id}
     </select>
 </mapper>

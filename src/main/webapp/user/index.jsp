@@ -66,49 +66,51 @@
 			</div>
 
 
-<%--            <!-- 景点门票 -->--%>
-<%--            <div class="container-fluid" style="padding-left: 0px">--%>
-<%--                <div class="col-md-12" style="height:20px;">--%>
-<%--                </div>--%>
-<%--                &lt;%&ndash;景点前三名列表&ndash;%&gt;--%>
-<%--                <div class="col-md-8" style="width:1030px; padding-left: 0px">--%>
-<%--                    <div class="mf_box">--%>
-<%--                        <div class="mf_tit clearfix">--%>
-<%--                            <span>景点门票</span>--%>
-<%--                        </div>--%>
-<%--                        &lt;%&ndash;下面是固定的数据，需要从数据库查&ndash;%&gt;--%>
-<%--                        <div class="js_wrap claerdix">--%>
-<%--                            <p>&nbsp;</p>--%>
-<%--                            <c:forEach items="${list}" var="scenic">--%>
-<%--                                <div class="js_con clearfix">--%>
-<%--                                    <div class="js_l">--%>
-<%--                                        <a href="#"><img src="../${scenic.pic }"></a>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="js_c">--%>
-<%--                                        <p>--%>
-<%--                                            <b>【${scenic.name}】</b>--%>
-<%--                                        </p>--%>
-<%--                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点主题：</font>--%>
-<%--                                                ${scenic.theme}</p>--%>
-<%--                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点地址：</font>--%>
-<%--                                                ${scenic.addr}</p>--%>
-<%--                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点特色：</font>--%>
-<%--                                                ${scenic.feature}</p>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="js_r">--%>
-<%--                                        <p>&nbsp;</p>--%>
-<%--                                        <p>--%>
-<%--                                            <span class="fn_o">已售</span><b>${scenic.sales}</b>--%>
-<%--                                            <span class="fn_o">张</span>--%>
-<%--                                        </p>--%>
-<%--                                        <a href="${pageContext.request.contextPath }/getScenicTById?id=${scenic.id}" class="btn btn-default btn-info">查看门票</a>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </c:forEach>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-                <%--地址选择+服务保障--%>
+            <!-- 景点门票 -->
+            <div class="container-fluid" style="padding-left: 0px">
+                <div class="col-md-12" style="height:20px;">
+                </div>
+                <%--景点前三名列表--%>
+                <div class="col-md-8" style="width:1030px; padding-left: 0px">
+                    <div class="mf_box">
+                        <div class="mf_tit clearfix">
+                            <span>景点门票</span>
+                        </div>
+                        <%--下面是固定的数据，需要从数据库查--%>
+                        <div class="js_wrap claerdix">
+                            <p>&nbsp;</p>
+                            <c:forEach items="${list}" var="scenic">
+                                <div class="js_con clearfix">
+                                    <div class="js_l">
+                                        <a href="#"><img src="../${scenic.img }"></a>
+                                    </div>
+                                    <div class="js_c">
+                                        <p>
+                                            <b>【${scenic.name}】</b>
+                                        </p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点主题：</font>
+                                                ${scenic.theme}</p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点地址：</font>
+                                                ${scenic.addr}</p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点特色：</font>
+                                                ${scenic.message}</p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点热度：</font>
+                                                ${scenic.hot}</p>
+                                    </div>
+                                    <div class="js_r">
+                                        <p>&nbsp;</p>
+                                        <p>
+                                            <span class="fn_o">已售</span><b>${scenic.sales}</b>
+                                            <span class="fn_o">张</span>
+                                        </p>
+                                        <a href="${pageContext.request.contextPath }/getScenicTById?id=${scenic.id}" class="btn btn-default btn-info">查看门票</a>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+                地址选择+服务保障
                 <div class="col-md-4 column" style="width:260px;">
                     <div class="clumn" style="width:260px;border:1px solid #E8E8E8">
                         <div class="clumn_tit t01">

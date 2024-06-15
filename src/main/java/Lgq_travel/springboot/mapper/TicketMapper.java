@@ -18,4 +18,5 @@ public interface TicketMapper {
     //结果集
     List<Ticket> selectPostListByQueryVo(QueryVo vo);
     Double selectPriceBySid(Integer sid);
+
 }

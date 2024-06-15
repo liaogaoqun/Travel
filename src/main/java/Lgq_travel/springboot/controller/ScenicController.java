@@ -51,6 +51,9 @@ public class ScenicController {
 //        model.addAttribute("page", page);
 //        return "user/scenicList";
 //    }
+    /**
+     * 为用户展示所有的景点信息getScenicPageForUser
+     */
     @RequestMapping(value = "/getScenicPageForUser")
     public String getScenicPageForUser(Model model,QueryVo vo,HttpServletRequest request){
         Page<Scenic> page = scenicService.selectPageByQueryVo(vo);

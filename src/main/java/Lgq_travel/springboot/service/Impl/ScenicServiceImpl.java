@@ -79,4 +79,9 @@ public class ScenicServiceImpl implements ScenicService {
         }
         return page;
     }
+
+    @Override
+    public Scenic getScenicById(Integer id) {
+        return scenicMapper.selectScenicById(id);
+    }
 }
