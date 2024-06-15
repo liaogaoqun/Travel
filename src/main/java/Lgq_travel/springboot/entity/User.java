@@ -67,7 +67,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.Email = email;
     }
 
     public String getSex() {
@@ -75,7 +75,7 @@ public class User {
     }
 
     public void setSex(String sex) {
-        Sex = sex;
+        this.Sex = sex;
     }
 
     public Date getBirthday() {
