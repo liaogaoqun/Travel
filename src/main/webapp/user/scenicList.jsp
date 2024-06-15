@@ -36,7 +36,7 @@
                                      <div class="js_wrap claerdix" style="background-color: whitesmoke;">
                                         <div class="js_con clearfix">
                                             <div class="js_l">
-                                                <a href="#"><img src="../${scenic.pic }"></a>
+                                                <a href="#"><img src="../${scenic.img}"></a>
                                             </div>
                                             <div class="js_c">
                                                 <p>
@@ -45,14 +45,14 @@
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点主题：</font>
                                                         ${scenic.theme}</p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点地址：</font>
-                                                        ${scenic.addr}</p>
+                                                        ${scenic.address}</p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点特色：</font>
-                                                        ${scenic.feature}</p>
+                                                        ${scenic.message}</p>
                                             </div>
                                             <div class="js_r">
                                                 <p>&nbsp;</p>
                                                 <p>
-                                                    <span class="fn_o">￥</span><b>${scenic.cheapestPrice}</b>起
+                                                    <span class="fn_o">￥</span><b>${scenic.price}</b>起
                                                 </p>
                                                 <a href="#" class="btn btn-default btn-info" data-toggle="modal" data-target="#shouldKnowDialog" >购买须知</a>
                                             </div>
@@ -80,7 +80,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                         <c:forEach items="${scenic.ticketList}" var="ticket">
+                                         <c:forEach items="${scenic.tickes}" var="ticket">
                                              <div class="js_con clearfix">
                                                  <div class="js_c" style="width:120px">
                                                      <p>
