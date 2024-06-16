@@ -38,7 +38,7 @@
                                 <form action="${pageContext.request.contextPath }/submitOrderInfo" method="post">
                                         <div class="js_con clearfix">
                                             <div class="js_l">
-                                                <a href="#"><img src="../${ticket.scenic.pic }"></a>
+                                                <a href="#"><img src="../${ticket.scenic.img}"></a>
                                             </div>
                                             <div class="js_c">
                                                 <p>
@@ -47,17 +47,17 @@
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点主题：</font>
                                                     ${ticket.scenic.theme}</p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点地址：</font>
-                                                    ${ticket.scenic.addr}</p>
+                                                    ${ticket.scenic.address}</p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">景点特色：</font>
-                                                    ${ticket.scenic.feature}</p>
+                                                    ${ticket.scenic.message}</p>
                                             </div>
                                             <div class="js_r">
                                                 <p>&nbsp;</p>
                                                 <p>
                                                     <span class="fn_o">
-                                                    </span><b>￥${ticket.mprice}</b>
+                                                    </span><b>￥${ticket.cprice}</b>
                                                 </p>
-                                                <input type="hidden" name="price" value="${ticket.mprice}">
+                                                <input type="hidden" name="price" value="${ticket.cprice}">
                                                 <input type="hidden" name="tid" value="${ticket.id}">
                                                 <input type="hidden" name="name" value="${ticket.name}">
                                                 <input  type="submit" value="提交订单" class="btn btn-default btn-info">
@@ -95,13 +95,13 @@
                                                  </div>
                                                  <div class="js_c" style="width:260px">
                                                      <p>
-                                                         <font style="color: #9d9d9d">${ticket.explain}</font>
+                                                         <font style="color: #9d9d9d">${ticket.message}</font>
                                                      </p>
                                                  </div>
                                                  <div class="js_c">
                                                      <p>
                                                          <font style="color: #9d9d9d">${ticket.dprice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         <font style="color: #9d9d9d">${ticket.mprice}</font>
+                                                         <font style="color: #9d9d9d">${ticket.cprice}</font>
                                                      </p>
                                                  </div>
                                                  <div class="js_r" style="padding-right: 19px;padding-top: 5px ">
@@ -135,7 +135,6 @@
 			<jsp:include page="footer.jsp"></jsp:include>
 		</div>
 
-<%--
         <!-- 提交订单 -->
         <div class="modal fade" id="submitOrderDialog" tabindex="-1" role="dialog"
              aria-labelledby="myModalLabel" style="width: 1366px">
@@ -186,7 +185,7 @@
                     </form>
                 </div>
             </div>
-        </div>--%>
+        </div>
 	</body>
 
 

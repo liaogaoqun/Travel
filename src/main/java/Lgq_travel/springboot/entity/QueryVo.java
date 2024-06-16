@@ -2,7 +2,7 @@ package Lgq_travel.springboot.entity;
 
 public class QueryVo {
     private String userid;
-    private String name;     //景点名字
+    private String name;     //名字
     private String address;  //地址
     private String theme;   //主题
     //当前页

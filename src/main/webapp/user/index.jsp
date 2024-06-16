@@ -177,37 +177,37 @@
     </div>
 
 
-<%--    <!-- 热门推荐 -->--%>
-<%--    <div class="clumn" style="width:1280px;border:1px solid #E8E8E8;margin-top: 30px;margin-left: 15px">--%>
-<%--        <div class="clumn_tit t01">--%>
-<%--            <span>美食推荐</span><a href="${pageContext.request.contextPath }/getFoodPageForUser">更多</a>--%>
-<%--        </div>--%>
-<%--        <div class="container-fluid" style="padding-top: 15px">--%>
-<%--            &lt;%&ndash;下面是固定的数据，需要从数据库查&ndash;%&gt;--%>
-<%--            <div class="col-md-12">--%>
-<%--                <c:forEach items="${listFood}" var="food">--%>
-<%--                    <div class="col-md-4 column">--%>
-<%--                        <div class="row">--%>
-<%--                            <div class="col-md-12">--%>
-<%--                                <div class="thumbnail">--%>
-<%--                                    <img alt="index_discount_hangzhoutotai" src="../${food.pic }"/>--%>
-<%--                                    <div class="caption">--%>
-<%--                                        <p>--%>
-<%--                                            <b>【${food.name}】</b>--%>
-<%--                                        </p>--%>
-<%--                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">美食介绍：</font>--%>
-<%--                                                ${food.describe}</p>--%>
-<%--                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">推荐餐馆：</font>--%>
-<%--                                                ${food.commend}</p>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </c:forEach>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <!-- 热门推荐 -->
+    <div class="clumn" style="width:1280px;border:1px solid #E8E8E8;margin-top: 30px;margin-left: 15px">
+        <div class="clumn_tit t01">
+            <span>美食推荐</span><a href="${pageContext.request.contextPath }/getFoodPageForUser">更多</a>
+        </div>
+        <div class="container-fluid" style="padding-top: 15px">
+            <%--下面是固定的数据，需要从数据库查--%>
+            <div class="col-md-12">
+                <c:forEach items="${listFood}" var="food">
+                    <div class="col-md-4 column">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="thumbnail">
+                                    <img alt="index_discount_hangzhoutotai" src="../${food.img}"/>
+                                    <div class="caption">
+                                        <p>
+                                            <b>【${food.foodname}】</b>
+                                        </p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">美食介绍：</font>
+                                                ${food.message}</p>
+                                        <p>&nbsp;&nbsp;<font style="color: #9d9d9d">推荐餐馆：</font>
+                                                ${food.address}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+    </div>
 
 
     <!-- 引入footer.jsp -->

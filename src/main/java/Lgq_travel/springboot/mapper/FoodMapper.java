@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface FoodMapper {
     //获得美食列表
     List<Food> selectAllFood();

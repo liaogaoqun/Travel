@@ -44,7 +44,7 @@ body {
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-6">
-							<label style="padding-top: 7px">${user.Email}</label>
+							<label style="padding-top: 7px">${user.email}</label>
 						</div>
 					</div>
 					<div class="form-group">
@@ -56,19 +56,19 @@ body {
 					<div class="form-group opt">
 						<label for="inlineRadio1" class="col-sm-2 control-label">性别</label>
 						<div class="col-sm-6">
-							<label style="padding-top: 7px">${user.Sex}</label>
+							<label style="padding-top: 7px">${user.sex}</label>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="date" class="col-sm-2 control-label">生日</label>
 						<div class="col-sm-10">
-							<label style="padding-top: 7px">${user.Birthday}</label>
+							<label style="padding-top: 7px">${user.birthday}</label>
 						</div>
 					</div>
                     <div class="form-group">
                         <label for="date" class="col-sm-2 control-label">电话号码</label>
                         <div class="col-sm-10">
-                            <label style="padding-top: 7px">${user.TePhone}</label>
+                            <label style="padding-top: 7px">${user.tephone}</label>
                         </div>
                     </div>
                     <div class="form-group">

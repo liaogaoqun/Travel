@@ -1,7 +1,6 @@
 package Lgq_travel.springboot.entity;
 
 import java.util.Date;
-import java.util.Stack;
 
 public class User {
     private int userid;
@@ -14,11 +13,11 @@ public class User {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Sex='" + Sex + '\'' +
-                ", Birthday=" + Birthday +
+                ", Email='" + email + '\'' +
+                ", Sex='" + sex + '\'' +
+                ", Birthday=" + birthday +
                 ", state=" + state +
-                ", TePhone='" + TePhone + '\'' +
+                ", TePhone='" + tephone + '\'' +
                 '}';
     }
 
@@ -32,11 +31,11 @@ public class User {
 
     private String username;
     private String password;
-    private String Email;
-    private String Sex;
-    private Date Birthday;
+    private String email;
+    private String sex;
+    private Date birthday;
     private int state;
-    private String TePhone;
+    private String tephone;
 
     public int getUserid() {
         return userid;
@@ -63,27 +62,27 @@ public class User {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        this.Email = email;
+        this.email = email;
     }
 
     public String getSex() {
-        return Sex;
+        return sex;
     }
 
     public void setSex(String sex) {
-        this.Sex = sex;
+        this.sex = sex;
     }
 
     public Date getBirthday() {
-        return Birthday;
+        return birthday;
     }
 
     public void setBirthday(Date birthday) {
-        this.Birthday = birthday;
+        this.birthday = birthday;
     }
 
     public int getState() {
@@ -94,12 +93,12 @@ public class User {
         this.state = state;
     }
 
-    public String getTePhone() {
-        return TePhone;
+    public String gettephone() {
+        return tephone;
     }
 
-    public void setTePhone(String tePhone) {
-        this.TePhone = tePhone;
+    public void settephone(String tePhone) {
+        this.tephone = tePhone;
     }
 
 }

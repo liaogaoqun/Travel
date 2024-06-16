@@ -74,7 +74,7 @@ public class IndexController {
         List<Food> listFood =  foodService.selectFoodList();
 //        获取热度榜前3的景点
         list = list.subList(0, 3);
-//        listFood = listFood.subList(0, 3);
+        listFood = listFood.subList(0, 3);
         model.addAttribute("list",list);
         model.addAttribute("listFood",listFood);
         return "user/index";

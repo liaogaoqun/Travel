@@ -1,14 +1,21 @@
 package Lgq_travel.springboot.entity;
 
 public class Order {
-    private int id;
-    private int tid; //票id
-    private int uid; //用户id
-    private int num; //票数量
-    private float price; //票价
-    private String OrderNo; //订单编号
-    private String TicketNo; //票编号
-    private int state;  //票状态
+    private Integer id;
+    private Integer tid; //票id
+    private Integer uid; //用户id
+    private Integer num; //票数量
+    private double price; //支付总额
+    private String orderno; //订单编号
+    private String ticketno; //取票码
+    private Integer state;  //票状态
+    private User user;
+    private Ticket ticket;
+    private Scenic scenic;
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     @Override
     public String toString() {
@@ -18,45 +25,48 @@ public class Order {
                 ", uid=" + uid +
                 ", num=" + num +
                 ", price=" + price +
-                ", OrderNo='" + OrderNo + '\'' +
-                ", TicketNo='" + TicketNo + '\'' +
+                ", orderno='" + orderno + '\'' +
+                ", ticketno='" + ticketno + '\'' +
                 ", state=" + state +
+                ", user=" + user +
+                ", ticket=" + ticket +
+                ", scenic=" + scenic +
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getTid() {
+    public Integer getTid() {
         return tid;
     }
 
-    public void setTid(int tid) {
+    public void setTid(Integer tid) {
         this.tid = tid;
     }
 
-    public int getUid() {
+    public Integer getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 
-    public int getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -64,27 +74,44 @@ public class Order {
         this.price = price;
     }
 
-    public String getOrderNo() {
-        return OrderNo;
+    public String getOrderno() {
+        return orderno;
     }
 
-    public void setOrderNo(String orderNo) {
-        OrderNo = orderNo;
+    public void setOrderno(String orderno) {
+        this.orderno = orderno;
     }
 
-    public String getTicketNo() {
-        return TicketNo;
+    public String getTicketno() {
+        return ticketno;
     }
 
-    public void setTicketNo(String ticketNo) {
-        TicketNo = ticketNo;
+    public void setTicketno(String ticketno) {
+        this.ticketno = ticketno;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
 }
+

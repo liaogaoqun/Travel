@@ -33,20 +33,20 @@
         name,
         username,
         password,
-        Email,
-        Birthday,
-        Sex,
-        TePhone,
+        email,
+        birthday,
+        sex,
+        tephone,
         state
         )
         <trim prefix=" values(" suffix=")" suffixOverrides=",">
             #{name,jdbcType=VARCHAR}
             #{username,jdbcType=VARCHAR},
             #{password,jdbcType=VARCHAR},
-            #{Email,jdbcType=VARCHAR},
-            #{Birthday,jdbcType=TIMESTAMP},
-            #{Sex,jdbcType=VARCHAR},
-            #{TePhone,jdbcType=VARCHAR},
+            #{email,jdbcType=VARCHAR},
+            #{birthday,jdbcType=TIMESTAMP},
+            #{sex,jdbcType=VARCHAR},
+            #{tephone,jdbcType=VARCHAR},
             1,
         </trim>
     </insert>
@@ -61,10 +61,10 @@
         <set>
             <if test="username != null">username=#{username,jdbcType=VARCHAR},</if>
             <if test="password != null">password=#{password,jdbcType=VARCHAR},</if>
-            <if test="TelePhone != null">telephone=#{TelePhone,jdbcType=VARCHAR},</if>
-            <if test="Birthday != null">birthday=#{Birthday,jdbcType=TIMESTAMP},</if>
-            <if test="Sex != null">sex=#{Sex,jdbcType=VARCHAR},</if>
-            <if test="Email != null">Email=#{Email,jdbcType=VARCHAR}</if>
+            <if test="tephone != null">telephone=#{tephone,jdbcType=VARCHAR},</if>
+            <if test="birthday != null">birthday=#{birthday,jdbcType=TIMESTAMP},</if>
+            <if test="sex != null">sex=#{sex,jdbcType=VARCHAR},</if>
+            <if test="email != null">Email=#{email,jdbcType=VARCHAR}</if>
         </set>
         where userid = #{userid};
     </update>

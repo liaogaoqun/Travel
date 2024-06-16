@@ -32,15 +32,15 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="thumbnail">
-                                            <img alt="index_discount_hangzhoutotai" src="../${food.pic }" />
+                                            <img alt="index_discount_hangzhoutotai" src="../${food.img}" />
                                             <div class="caption">
                                                 <p>
-                                                    <b>【${food.name}】</b>
+                                                    <b>【${food.foodname}】</b>
                                                 </p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">美食介绍：</font>
-                                                    ${food.describe}</p>
+                                                    ${food.address}</p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">推荐餐馆：</font>
-                                                    ${food.commend}</p>
+                                                    ${food.message}</p>
                                             </div>
                                         </div>
                                     </div>
