@@ -17,6 +17,9 @@ public interface TicketMapper {
     Integer postCountByQueryVo(QueryVo vo);
     //结果集
     List<Ticket> selectPostListByQueryVo(QueryVo vo);
+    //获得最低票价
     Double selectPriceBySid(Integer sid);
+    //通过票id获得Ticket
+    Ticket getTicketById(Integer id);
 
 }

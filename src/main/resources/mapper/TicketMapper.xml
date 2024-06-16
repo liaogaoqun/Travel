@@ -53,4 +53,12 @@
     <select id="selectPriceBySid" resultType="double" parameterType="Integer">
         select min(Cprice) from ticket where sid=#{sid}
     </select>
+    
+    <select id="getTicketById" parameterType="Integer" resultMap="TicketMap">
+        select
+            t.id,t.name,t.message,t.dprice,t.cprice,s.name,s.message,s.theme,s.address,s.img
+        from ticket t
+                 left join scenic s on s.id=t.sid
+        where t.id = #{id}
+    </select>
 </mapper>

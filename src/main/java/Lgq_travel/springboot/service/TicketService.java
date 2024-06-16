@@ -13,4 +13,6 @@ public interface TicketService {
     List<Ticket> selectTicketListBySid(Integer sid);
     //通过景点id获取景点最低票价
     double selectTickerPriceBySid(Integer sid);
+    //通过id返回Ticket
+    Ticket getTicketById(Integer id);
 }

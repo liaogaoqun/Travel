@@ -31,7 +31,7 @@ public class OrderController {
     */
     @RequestMapping(value = "/getOrderInfo")
     public String ToPayOrderPage(Integer id, Model model) {
-        Ticket ticket = (Ticket) ticketService.selectTicketListBySid(id);
+        Ticket ticket = ticketService.getTicketById(id);
         model.addAttribute("ticket", ticket);
         return "user/order";
     }

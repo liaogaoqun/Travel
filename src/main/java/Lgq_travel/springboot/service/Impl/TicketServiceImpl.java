@@ -45,4 +45,9 @@ public class TicketServiceImpl implements TicketService {
     public double selectTickerPriceBySid(Integer sid) {
         return ticketMapper.selectPriceBySid(sid);
     }
+
+    @Override
+    public Ticket getTicketById(Integer id) {
+        return ticketMapper.getTicketById(id);
+    }
 }

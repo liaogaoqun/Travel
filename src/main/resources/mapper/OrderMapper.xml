@@ -47,7 +47,7 @@
         from `order`
     </select>
 
-    <select id="selectPostListByQueryVo" parameterType="QueryVo" resultType="Order">
+    <select id="selectPostListByQueryVo" parameterType="QueryVo" resultMap="OrderMap">
         select
         o.id,o.orderno,o.ticketno,o.num,o.price,o.state,t.name,s.name,u.username
         from `order` o
