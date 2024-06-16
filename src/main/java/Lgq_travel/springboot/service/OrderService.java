@@ -9,8 +9,13 @@ import java.util.List;
 public interface OrderService {
     //通过uid获得用户所用订单
     List<Order> selectOrderByUid(Integer uid);
+
     //返回分页结果集
     Page<Order> selectOrderPageByQueryVo(QueryVo vo);
+
     //插入Order对象
     int insertOrder(Order order);
+
+    //通过订单编号更改订单状态
+    int updateStateByOno(String orderno);
 }

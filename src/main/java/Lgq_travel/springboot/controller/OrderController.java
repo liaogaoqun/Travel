@@ -54,34 +54,34 @@ public class OrderController {
     /*
      * 提交订单转至付款页面
      * */
-//    @RequestMapping(value = "/submitOrderInfo")
-//    public String submitOrder(HttpServletRequest request, Order order, String name, Double price, Model model){
-//        order.setPrice(price*order.getNum());
-//        order.setOrderno(UUID.randomUUID().toString());
-//        order.setTicketno(UUID.randomUUID().toString());
-//        User user = (User)request.getSession().getAttribute("user");
-//        order.setUid(user.getUserid());
-//        orderService.insertOrder(order);
-//        model.addAttribute("order",order);
-//        model.addAttribute("mprice",price);
-//        model.addAttribute("name",name);
-//        return "user/orderInfo";
-//    }
-
     @RequestMapping(value = "/submitOrderInfo")
     public String submitOrder(HttpServletRequest request, Order order, String name, Double price, Model model) {
         //设置总价
         order.setPrice(price * order.getNum());
+        System.out.println(order);
         //使用十六机制随机数设置订单编号和取票号
         order.setOrderno(UUID.randomUUID().toString());
         order.setTicketno(UUID.randomUUID().toString());
 
         User user = (User) request.getSession().getAttribute("user");
         order.setUid(user.getUserid());
+        //还未付款，设置订单状态为0
+        order.setState(0);
+        System.out.println(user);
         orderService.insertOrder(order);
         model.addAttribute("order", order);
         model.addAttribute("cprice", price);
         model.addAttribute("name", name);
         return "user/orderInfo";
+    }
+
+    @RequestMapping(value = "/payForOrder")
+    public String ToPayOrder(String ticketno, String orderno, double price,Model model){
+        //付款成功，将订单状态改为未发票
+        orderService.updateStateByOno(orderno);
+        model.addAttribute("orderno",orderno);
+        model.addAttribute("ticketno",ticketno);
+        model.addAttribute("price",price);
+        return "user/paySuccess";
     }
 }

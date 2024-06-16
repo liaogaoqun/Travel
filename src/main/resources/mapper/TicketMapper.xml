@@ -7,11 +7,11 @@
         <id property="id" column="id" javaType="Integer" jdbcType="INTEGER"/>
         <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
         <result property="sid" column="sid" javaType="Integer" jdbcType="INTEGER"/>
-        <result property="DPrice" column="Dprice" javaType="double" jdbcType="DOUBLE"/>
-        <result property="CPrice" column="cprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="dprice" column="Dprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="cprice" column="Cprice" javaType="double" jdbcType="DOUBLE"/>
         <result property="message" column="message" javaType="String" jdbcType="VARCHAR"/>
-        <result property="DPNum" column="DPNum" javaType="Integer" jdbcType="INTEGER"/>
-        <result property="CPNum" column="CPNum" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="dpNum" column="DPNum" javaType="Integer" jdbcType="INTEGER"/>
+        <result property="cpNum" column="CPNum" javaType="Integer" jdbcType="INTEGER"/>
         <association property="scenic" javaType="Scenic">
             <id property="id" column="sid"/>
             <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
@@ -56,7 +56,7 @@
     
     <select id="getTicketById" parameterType="Integer" resultMap="TicketMap">
         select
-            t.id,t.name,t.message,t.dprice,t.cprice,s.name,s.message,s.theme,s.address,s.img
+            t.id,t.name,t.message,t.Dprice,t.Cprice,s.name,s.message,s.theme,s.address,s.img
         from ticket t
                  left join scenic s on s.id=t.sid
         where t.id = #{id}

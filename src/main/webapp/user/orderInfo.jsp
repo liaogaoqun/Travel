@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="username" style="text-align: left" class="col-sm-3 control-label">订单编号</label>
                     <div class="col-sm-9">
-                        <label style="padding-top: 7px">${order.no}</label>
+                        <label style="padding-top: 7px">${order.orderno}</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label for="inputEmail3" style="text-align: left" class="col-sm-3 control-label">门票单价</label>
                     <div class="col-sm-9">
-                        <label style="padding-top: 7px">${mprice}</label>
+                        <label style="padding-top: 7px">${cprice}</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -62,7 +62,7 @@
                 <div class="form-group opt">
                     <label for="inlineRadio1" style="text-align: left" class="col-sm-3 control-label">应付金额</label>
                     <div class="col-sm-9">
-                        <label style="padding-top: 7px">${order.paid}</label>
+                        <label style="padding-top: 7px">${order.price}</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -77,8 +77,9 @@
                 <div class="form-group">
                     <label for="date" style="text-align: left" class="col-sm-3 control-label">操作按钮</label>
                     <div class="col-sm-9" style="padding-top: 5px">
-                        <input type="hidden" name="no" value="${order.no}">
-                        <input type="hidden" name="paid" value="${order.paid}">
+                        <input type="hidden" name="orderno" value="${order.orderno}">
+                        <input type="hidden" name="price" value="${order.price}">
+                        <input type="hidden" name="ticketno" value="${order.ticketno}">
                         <input  type="submit" value="立即支付" class="btn btn-default btn-info">
                     </div>
                 </div>

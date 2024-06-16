@@ -35,8 +35,11 @@
         <div class="col-md-8" style=" width: 650px; padding: 10px 100px; margin: 30px; border: 7px solid #ccc;">
             <h2 style="text-align: center">支付结果</h2>
                 <div class="form-group">
-                    <label style="text-align: left" class="col-sm-12 control-label">您订单编号为"${no}"的订单支付成功！</label>
-                    <label style="text-align: left" class="col-sm-12 control-label">您的取票码是:${code}</label>
+                    <label style="text-align: left" class="col-sm-12 control-label">付款${price}成功！</label>
+                    <p></p>
+                    <label style="text-align: left" class="col-sm-12 control-label">您订单编号为"${orderno}"的订单支付成功！</label>
+                    <p></p>
+                    <label style="text-align: left" class="col-sm-12 control-label">您的取票码是:${ticketno}</label>
                 </div>
         </div>
     </div>

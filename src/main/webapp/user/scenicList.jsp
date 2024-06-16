@@ -94,8 +94,8 @@
                                                  </div>
                                                  <div class="js_c">
                                                      <p>
-                                                         <font style="color: #9d9d9d">${ticket.DPrice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         <font style="color: #9d9d9d">${ticket.CPrice}</font>
+                                                         <font style="color: #9d9d9d">${ticket.dprice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                         <font style="color: #9d9d9d">${ticket.cprice}</font>
                                                      </p>
                                                  </div>
                                                  <div class="js_r" style="padding-right: 11px; ">

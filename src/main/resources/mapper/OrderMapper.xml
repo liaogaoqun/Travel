@@ -67,13 +67,21 @@
     </select>
 
     <insert id="insertOrder" parameterType="Order">
-        insert into order(uid, tid, num, price, orderno, ticketno)
+        insert into `order`
+            (uid, tid, num, price, orderno, ticketno, state)
         values (#{uid,jdbcType=INTEGER},
                 #{tid,jdbcType=INTEGER},
                 #{num,jdbcType=INTEGER},
                 #{price,jdbcType=DOUBLE},
                 #{orderno,jdbcType=VARCHAR},
-                #{ticketno,jdbcType=VARCHAR},);
+                #{ticketno,jdbcType=VARCHAR},
+                #{state,jdbcType=INTEGER});
     </insert>
+
+    <update id="updateStateByOno" parameterType="String">
+        update `order`
+        set state=1
+        where orderno = #{orderno}
+    </update>
 
 </mapper>

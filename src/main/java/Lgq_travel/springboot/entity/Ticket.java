@@ -13,11 +13,11 @@ public class Ticket {
         this.name = name;
     }
 
-    private Double DPrice;  //成人票价
-    private Double CPrice; //儿童票价
+    private Double cprice;  //市场价
+    private Double dprice; //优惠价
     private String message; //详情信息
-    private Integer DPNum;   //成人票数量
-    private Integer CPNum;  //儿童票数量
+    private Integer dpNum;   //总票数
+    private Integer cpNum;  //已售票数
     private Scenic scenic;
 
     @Override
@@ -26,22 +26,13 @@ public class Ticket {
                 "id=" + id +
                 ", sid=" + sid +
                 ", name='" + name + '\'' +
-                ", DPrice=" + DPrice +
-                ", CPrice=" + CPrice +
+                ", cprice=" + cprice +
+                ", dprice=" + dprice +
                 ", message='" + message + '\'' +
-                ", DPNum=" + DPNum +
-                ", CPNum=" + CPNum +
+                ", dpNum=" + dpNum +
+                ", cpNum=" + cpNum +
                 ", scenic=" + scenic +
                 '}';
-    }
-
-    public Scenic getScenic() {
-        return scenic;
-    }
-
-
-    public void setScenic(Scenic scenic) {
-        this.scenic = scenic;
     }
 
     public Integer getId() {
@@ -60,20 +51,20 @@ public class Ticket {
         this.sid = sid;
     }
 
-    public Double getDPrice() {
-        return DPrice;
+    public Double getCprice() {
+        return cprice;
     }
 
-    public void setDPrice(Double DPrice) {
-        this.DPrice = DPrice;
+    public void setCprice(Double cprice) {
+        this.cprice = cprice;
     }
 
-    public Double getCPrice() {
-        return CPrice;
+    public Double getDprice() {
+        return dprice;
     }
 
-    public void setCPrice(Double CPrice) {
-        this.CPrice = CPrice;
+    public void setDprice(Double dprice) {
+        this.dprice = dprice;
     }
 
     public String getMessage() {
@@ -84,19 +75,27 @@ public class Ticket {
         this.message = message;
     }
 
-    public Integer getDPNum() {
-        return DPNum;
+    public Integer getDpNum() {
+        return dpNum;
     }
 
-    public void setDPNum(Integer DPNum) {
-        this.DPNum = DPNum;
+    public void setDpNum(Integer dpNum) {
+        this.dpNum = dpNum;
     }
 
-    public Integer getCPNum() {
-        return CPNum;
+    public Integer getCpNum() {
+        return cpNum;
     }
 
-    public void setCPNum(Integer CPNum) {
-        this.CPNum = CPNum;
+    public void setCpNum(Integer cpNum) {
+        this.cpNum = cpNum;
+    }
+
+    public Scenic getScenic() {
+        return scenic;
+    }
+
+    public void setScenic(Scenic scenic) {
+        this.scenic = scenic;
     }
 }

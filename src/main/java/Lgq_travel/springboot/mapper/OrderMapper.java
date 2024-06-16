@@ -18,4 +18,6 @@ public interface OrderMapper {
     List<Order> selectPostListByQueryVo(QueryVo vo);
     //插入Order
     int insertOrder(Order order);
+    //通过订单编号更改订单状态
+    int updateStateByOno(String orderno);
 }
