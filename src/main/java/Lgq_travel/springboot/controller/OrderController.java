@@ -46,8 +46,9 @@ public class OrderController {
         //设置Userid信息
         vo.setUserid(String.valueOf(user.getUserid()));
         Page<Order> page = orderService.selectOrderPageByQueryVo(vo);
+        System.out.println(page.getRows());
         model.addAttribute("page", page);
-        return "user/orderInfo";
+        return "user/orderList";
     }
 
     /*

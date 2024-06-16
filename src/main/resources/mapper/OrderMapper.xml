@@ -42,8 +42,9 @@
         where o.uid = #{uid}
     </select>
 
-    <select id="postCountByQueryVo" parameterType="QueryVo" resultType="Order">
-        select count(1) from order
+    <select id="postCountByQueryVo" parameterType="QueryVo" resultType="Integer">
+        select count(1)
+        from `order`
     </select>
 
     <select id="selectPostListByQueryVo" parameterType="QueryVo" resultType="Order">
@@ -52,7 +53,7 @@
         from `order` o
         left join ticket t on t.id=o.tid
         left join scenic s on t.sid=s.id
-        left join  user u on u.userid=o.uid
+        left join user u on u.userid=o.uid
         <where>
             <if test="name != null and name != ''">
                 u.username like "%"#{name}"%"
@@ -66,13 +67,13 @@
     </select>
 
     <insert id="insertOrder" parameterType="Order">
-        insert into order(uid,tid,num,price,orderno,ticketno)
-        values (#{uid,jdbc=INTEGER},
-                #{tid,jdbc=INTEGER},
-                #{num,jdbc=INTEGER},
-                #{price,jdbc=DOUBLE},
-                #{orderno,jdbd=VARCHAR},
-                #{ticketno,jdbd=VARCHAR},);
+        insert into order(uid, tid, num, price, orderno, ticketno)
+        values (#{uid,jdbcType=INTEGER},
+                #{tid,jdbcType=INTEGER},
+                #{num,jdbcType=INTEGER},
+                #{price,jdbcType=DOUBLE},
+                #{orderno,jdbcType=VARCHAR},
+                #{ticketno,jdbcType=VARCHAR},);
     </insert>
 
 </mapper>
