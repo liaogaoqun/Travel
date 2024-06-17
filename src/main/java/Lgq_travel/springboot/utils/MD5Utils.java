@@ -4,6 +4,9 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/*
+* MD5加密工具类
+* */
 public class MD5Utils {
 	/**
 	 * 使用md5的算法进行加密

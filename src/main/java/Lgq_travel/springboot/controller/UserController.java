@@ -4,7 +4,6 @@ import Lgq_travel.springboot.entity.QueryVo;
 import Lgq_travel.springboot.entity.User;
 import Lgq_travel.springboot.service.UserService;
 import Lgq_travel.springboot.utils.MD5Utils;
-import Lgq_travel.springboot.utils.MailUtils;
 import Lgq_travel.springboot.utils.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +16,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.net.http.HttpRequest;
-import java.util.UUID;
 
 @Controller
 public class UserController {

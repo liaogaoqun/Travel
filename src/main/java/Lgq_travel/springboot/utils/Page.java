@@ -2,6 +2,9 @@ package Lgq_travel.springboot.utils;
 
 import java.util.List;
 
+/*
+* 界面分页工具类
+* */
 public class Page<T> {
 	//总条数
 	private int total;

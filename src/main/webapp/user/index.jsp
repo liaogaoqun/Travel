@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>保定旅行咨询网</title>
+    <title>红色旅游</title>
     <link rel="shortcut icon" href="../image/logo1.png" type="../image/x-icon"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
     <link href="../css/styles.css" rel="stylesheet" type="text/css"/>
