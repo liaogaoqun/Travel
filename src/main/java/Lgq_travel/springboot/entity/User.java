@@ -3,7 +3,7 @@ package Lgq_travel.springboot.entity;
 import java.util.Date;
 
 public class User {
-    private int userid;
+    private Integer userid;
     private String name; //昵称
 
     @Override
@@ -37,11 +37,11 @@ public class User {
     private int state;
     private String tephone;
 
-    public int getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 

@@ -18,4 +18,11 @@ public interface OrderService {
 
     //通过订单编号更改订单状态
     int updateStateByOno(String orderno);
+
+    //通过id更新state情况 --  1 未取票
+    void updateStateById(Integer id);
+    //通过id更新state -- 2 已取票
+    void updateStateToPayById(Integer id);
+    //通过订单号活动order对象
+    Order getOrderByNo(String orderno);
 }

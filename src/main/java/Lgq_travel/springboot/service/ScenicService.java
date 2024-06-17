@@ -11,4 +11,9 @@ public interface ScenicService {
     Page<Scenic> selectPageByQueryVo(QueryVo vo);
     //通过id获取景点信息
     Scenic getScenicById(Integer id);
+    //新增
+    void addScenic(Scenic scenic);
+    public void deleteById(Integer id);
+    int updateScenic(Scenic scenic);
+    int updateScenicSales(Integer id);
 }

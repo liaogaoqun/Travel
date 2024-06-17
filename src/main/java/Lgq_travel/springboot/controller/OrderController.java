@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,6 +25,22 @@ public class OrderController {
     private TicketService ticketService;
     @Autowired
     private OrderService orderService;
+
+
+
+    /**
+     *管理员查看所有订单
+     * @param model
+     * @param vo
+     * @return
+     */
+    @RequestMapping(value = "/manageOrder")
+    public String getOrderPage(Model model, QueryVo vo){
+        Page<Order> page = orderService.selectOrderPageByQueryVo(vo);
+        model.addAttribute("page", page);
+        model.addAttribute("name",vo.getName());
+        return "manager/order";
+    }
 
     /*
     在旅游景点界面点击购买
@@ -51,6 +68,15 @@ public class OrderController {
         return "user/orderList";
     }
 
+    /*
+    * 更新order状态-发票
+    * */
+    @RequestMapping(value = "/updateOrderState")
+    public @ResponseBody
+    String updateState(Integer id){
+        orderService.updateStateById(id);
+        return "OK";
+    }
     /*
      * 提交订单转至付款页面
      * */

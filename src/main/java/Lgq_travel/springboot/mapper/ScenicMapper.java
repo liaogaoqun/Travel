@@ -18,4 +18,13 @@ public interface ScenicMapper {
     List<Scenic> selectPostScience(QueryVo vo);
     //通过id获得景点
     Scenic selectScenicById(Integer id);
+    //增加景点
+    void addScenic(Scenic scenic);
+    //删除景点
+    public void deleteById(Integer id);
+    //更新
+    int updateScenic(Scenic scenic);
+    //更新售卖票数
+    int updateScenicSales(Integer id);
+
 }

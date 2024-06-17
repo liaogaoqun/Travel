@@ -84,4 +84,19 @@ public class ScenicServiceImpl implements ScenicService {
     public Scenic getScenicById(Integer id) {
         return scenicMapper.selectScenicById(id);
     }
+
+    public void addScenic(Scenic scenic){
+        scenicMapper.addScenic(scenic);
+    }
+
+    public void deleteById(Integer id){
+        scenicMapper.deleteById(id);
+    }
+
+    public int updateScenic(Scenic scenic){
+        return scenicMapper.updateScenic(scenic);
+    }
+    public int updateScenicSales(Integer id){
+        return scenicMapper.updateScenicSales(id);
+    }
 }

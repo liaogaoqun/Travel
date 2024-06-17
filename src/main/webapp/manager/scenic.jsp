@@ -66,7 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="addr">区县名称</label>
-                                <input type="text" class="form-control" id="addr" value="${addr }" name="addr">
+                                <input type="text" class="form-control" id="address" value="${addr }" name="address">
                             </div>
                             <div class="form-group">
                                 <label for="edit_theme">景点主题</label>
@@ -107,7 +107,7 @@
                                     <th>主题</th>
                                     <th>地址</th>
                                     <th>景点特色</th>
-                                    <th>销售量</th>
+                                    <th>热度</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -116,12 +116,12 @@
                                     <tr>
                                         <td>${row.id}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath }/${row.pic}" target="_Blank">${row.name}</a>
+                                            <a href="${pageContext.request.contextPath }/${row.img}" target="_Blank">${row.name}</a>
                                         </td>
                                         <td>${row.theme}</td>
-                                        <td>${row.addr}</td>
-                                        <td>${row.feature}</td>
-                                        <td>${row.sales}</td>
+                                        <td>${row.address}</td>
+                                        <td>${row.message}</td>
+                                        <td>${row.hot}</td>
                                         <td>
                                             <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editDialog" onclick="editScenic(${row.id})">修改</a>
                                             <a href="#" class="btn btn-danger btn-xs" onclick="deleteScenic(${row.id})">删除</a>
@@ -182,13 +182,13 @@
                         <div class="form-group">
                                 <label for="add_addr" class="col-sm-2 control-label">景点地址</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="add_addr" placeholder="景点地址" name="addr">
+                                    <input type="text" class="form-control" id="add_addr" placeholder="景点地址" name="address">
                                 </div>
                             </div>
                         <div class="form-group">
                             <label for="add_feature" class="col-sm-2 control-label">景点特色</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="add_feature" placeholder="景点特色" name="feature">
+                                <input type="text" class="form-control" id="add_feature" placeholder="景点特色" name="message">
                             </div>
                         </div>
                         <div class="form-group">
@@ -247,13 +247,13 @@
                             <div class="form-group">
                                 <label for="edit_addr" class="col-sm-2 control-label">景点地址</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_addr" placeholder="景点地址" name="addr">
+                                    <input type="text" class="form-control" id="edit_addr" placeholder="景点地址" name="address">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="edit_feature" class="col-sm-2 control-label">景点特色</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_feature" placeholder="景点特色" name="feature">
+                                    <input type="text" class="form-control" id="edit_feature" placeholder="景点特色" name="message">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -296,8 +296,8 @@
                     $("#edit_id").val(data.id);
                     $("#edit_name").val(data.name);
                     $("#edit_theme").val(data.theme);
-                    $("#edit_addr").val(data.addr);
-                    $("#edit_feature").val(data.feature);
+                    $("#edit_addr").val(data.address);
+                    $("#edit_feature").val(data.message);
                 }
             });
         }

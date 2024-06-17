@@ -92,13 +92,13 @@
                                 <c:forEach items="${page.rows}" var="row">
                                     <tr>
                                         <td>${row.id}</td>
-                                        <td>${row.no}</td>
+                                        <td>${row.orderno}</td>
                                         <td>${row.ticket.scenic.name}</td>
                                         <td>${row.ticket.name}</td>
                                         <td>${row.user.username}</td>
                                         <td>${row.num}</td>
-                                        <td>${row.paid}</td>
-                                        <td>${row.code}</td>
+                                        <td>${row.price}</td>
+                                        <td>${row.ticketno}</td>
                                         <c:if test="${row.state==2}">
                                             <td>已取票</td>
                                         </c:if>

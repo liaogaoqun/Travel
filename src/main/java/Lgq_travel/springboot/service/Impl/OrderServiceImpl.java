@@ -52,4 +52,19 @@ public class OrderServiceImpl implements OrderService {
     public int updateStateByOno(String orderno) {
         return orderMapper.updateStateByOno(orderno);
     }
+
+    @Override
+    public void updateStateById(Integer id) {
+        orderMapper.updateStateById(id);
+    }
+
+    @Override
+    public void updateStateToPayById(Integer id) {
+        orderMapper.updateStateToPayById(id);
+    }
+
+    @Override
+    public Order getOrderByNo(String orderno) {
+        return orderMapper.getOrderByNo(orderno);
+    }
 }

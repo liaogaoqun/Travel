@@ -2,6 +2,7 @@ package Lgq_travel.springboot.controller;
 
 import Lgq_travel.springboot.entity.Food;
 import Lgq_travel.springboot.entity.Scenic;
+import Lgq_travel.springboot.entity.User;
 import Lgq_travel.springboot.service.FoodService;
 import Lgq_travel.springboot.service.ScenicService;
 import Lgq_travel.springboot.service.TicketService;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -68,7 +70,9 @@ public class IndexController {
      * @return
      */
     @RequestMapping(value = "/user")
-    public String testUserIndex(Model model){
+    public String testUserIndex(Model model, HttpSession session){
+        User user = (User) session.getAttribute("user");
+        System.out.println("user111:"+user);
         //获取热度榜靠前的景点
         List<Scenic> list =  scenicService.selectScenicList();
         List<Food> listFood =  foodService.selectFoodList();

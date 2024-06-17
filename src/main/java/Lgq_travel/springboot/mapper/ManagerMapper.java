@@ -1,6 +1,7 @@
 package Lgq_travel.springboot.mapper;
 
-import org.apache.catalina.Manager;
+
+import Lgq_travel.springboot.entity.Manager;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -12,9 +13,9 @@ public interface ManagerMapper {
     //插入管理员
     public int insertManager(Manager manager);
     //删除管理员
-    public int deleteManager(String id);
+    public int deleteManager(Integer id);
     //通过名字获取管理员列表
     public List<Manager> getAllManager(String name);
-
+    //登录查询
     public Manager confirmManager(Manager manager);
 }

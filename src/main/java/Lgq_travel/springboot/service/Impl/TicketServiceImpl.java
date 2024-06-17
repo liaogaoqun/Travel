@@ -50,4 +50,16 @@ public class TicketServiceImpl implements TicketService {
     public Ticket getTicketById(Integer id) {
         return ticketMapper.getTicketById(id);
     }
+
+    public void deleteById(Integer id) {
+        ticketMapper.deleteById(id);
+    }
+
+    public void addTicket(Ticket ticket) {
+        ticketMapper.addTicket(ticket);
+    }
+
+    public int updateTicket(Ticket ticket) {
+        return ticketMapper.updateTicket(ticket);
+    }
 }

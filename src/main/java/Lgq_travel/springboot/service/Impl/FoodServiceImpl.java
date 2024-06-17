@@ -35,4 +35,24 @@ public class FoodServiceImpl implements FoodService {
         }
         return page;
     }
+
+    @Override
+    public void addFood(Food Food) {
+        foodMapper.addFood(Food);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        foodMapper.deleteById(id);
+    }
+
+    @Override
+    public int updateFood(Food Food) {
+        return foodMapper.updateFood(Food);
+    }
+
+    @Override
+    public Food getFoodById(Integer id) {
+        return foodMapper.selectFoodById(id);
+    }
 }

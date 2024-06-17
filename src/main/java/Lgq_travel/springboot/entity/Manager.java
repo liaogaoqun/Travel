@@ -1,16 +1,16 @@
 package Lgq_travel.springboot.entity;
 
 public class Manager {
-    private String managerid;
+    private Integer managerid;
     private String name;
     private String password;
     private int flag;
 
-    public String getManagerid() {
+    public Integer getManagerid() {
         return managerid;
     }
 
-    public void setManagerid(String managerid) {
+    public void setManagerid(Integer managerid) {
         this.managerid = managerid;
     }
 

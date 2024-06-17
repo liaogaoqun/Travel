@@ -7,8 +7,8 @@
         <id property="id" column="id" javaType="Integer" jdbcType="INTEGER"/>
         <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
         <result property="sid" column="sid" javaType="Integer" jdbcType="INTEGER"/>
-        <result property="dprice" column="Dprice" javaType="double" jdbcType="DOUBLE"/>
-        <result property="cprice" column="Cprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="Dprice" column="Dprice" javaType="double" jdbcType="DOUBLE"/>
+        <result property="Cprice" column="Cprice" javaType="double" jdbcType="DOUBLE"/>
         <result property="message" column="message" javaType="String" jdbcType="VARCHAR"/>
         <result property="dpNum" column="DPNum" javaType="Integer" jdbcType="INTEGER"/>
         <result property="cpNum" column="CPNum" javaType="Integer" jdbcType="INTEGER"/>
@@ -48,6 +48,40 @@
         order by t.id desc
         limit #{startRow},#{size}
     </select>
+
+    <!-- 通过ID删除 -->
+    <delete id="deleteById" parameterType="int">
+        delete from ticket where id = #{id}
+    </delete>
+
+    <insert id="addTicket" parameterType="Ticket">
+        insert into `ticket`
+        (
+            sid,
+            name,
+            `message`,
+            Dprice,
+            Cprice
+        )
+        values(
+                  #{sid,jdbcType=INTEGER},
+                  #{name,jdbcType=VARCHAR},
+                  #{message,jdbcType=VARCHAR},
+                  #{Dprice,jdbcType=DOUBLE},
+                  #{Cprice,jdbcType=DOUBLE}
+              )
+    </insert>
+
+    <update id="updateTicket" parameterType="Ticket">
+        update `ticket`
+        <set>
+            <if test="name != null">name=#{name,jdbcType=VARCHAR},</if>
+            <if test="message != null">`message`=#{message,jdbcType=VARCHAR},</if>
+            <if test="Dprice != null">Dprice=#{Dprice,jdbcType=DOUBLE},</if>
+            <if test="Cprice != null">Cprice=#{Cprice,jdbcType=DOUBLE},</if>
+        </set>
+        where id = #{id}
+    </update>
 
     <!--    //获得最低票价-->
     <select id="selectPriceBySid" resultType="double" parameterType="Integer">

@@ -35,7 +35,7 @@
                                             <img alt="index_discount_hangzhoutotai" src="../${food.img}" />
                                             <div class="caption">
                                                 <p>
-                                                    <b>【${food.foodname}】</b>
+                                                    <b>【${food.name}】</b>
                                                 </p>
                                                 <p>&nbsp;&nbsp;<font style="color: #9d9d9d">美食介绍：</font>
                                                     ${food.address}</p>

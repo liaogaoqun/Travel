@@ -62,7 +62,7 @@
                         <form class="form-inline" action="${pageContext.request.contextPath }/manageFood" method="post">
                             <div class="form-group">
                                 <label for="name">美食名称</label>
-                                <input type="text" class="form-control" id="name" value="${name }" name="name">
+                                <input type="text" class="form-control" id="name" value="${name}" name="name">
                             </div>
                             <button type="submit" class="btn btn-primary">查询</button>
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addDialog" >添加</a>
@@ -91,10 +91,10 @@
                                         <td>${row.id}</td>
                                         <td>${row.name}</td>
                                         <td width="100px">
-                                            <img width="100%" height="15%" src="<%=basePath%>/${row.pic}"/>
+                                            <img width="100%" height="15%" src="<%=basePath%>/${row.img}"/>
                                         </td>
-                                        <td>${row.describe}</td>
-                                        <td>${row.commend}</td>
+                                        <td>${row.message}</td>
+                                        <td>${row.address}</td>
                                         <td>
                                             <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editDialog" onclick="editFood(${row.id})">修改</a>
                                             <a href="#" class="btn btn-danger btn-xs" onclick="deleteFood(${row.id})">删除</a>
@@ -138,13 +138,13 @@
                             <div class="form-group">
                                 <label for="add_describe" class="col-sm-2 control-label">美食介绍</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="add_describe" placeholder="美食介绍" name="describe">
+                                    <input type="text" class="form-control" id="add_describe" placeholder="美食介绍" name="message">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="add_commend" class="col-sm-2 control-label">推荐餐馆</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="add_commend" placeholder="推荐餐馆" name="commend">
+                                    <input type="text" class="form-control" id="add_commend" placeholder="推荐餐馆" name="address">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -186,13 +186,13 @@
                             <div class="form-group">
                                 <label for="edit_describe" class="col-sm-2 control-label">美食介绍</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_describe" placeholder="美食介绍" name="describe">
+                                    <input type="text" class="form-control" id="edit_describe" placeholder="美食介绍" name="message">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="edit_commend" class="col-sm-2 control-label">推荐餐馆</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_commend" placeholder="推荐餐馆" name="commend">
+                                    <input type="text" class="form-control" id="edit_commend" placeholder="推荐餐馆" name="address">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -230,8 +230,8 @@
                 success:function(data) {
                     $("#edit_id").val(data.id);
                     $("#edit_name").val(data.name);
-                    $("#edit_commend").val(data.commend);
-                    $("#edit_describe").val(data.describe);
+                    $("#edit_commend").val(data.message);
+                    $("#edit_describe").val(data.address);
                 }
             });
         }

@@ -2,7 +2,7 @@ package Lgq_travel.springboot.entity;
 
 public class Food {
     private int id;
-    private String foodname;
+    private String name;
     private String address;
     private String message;  //详情信息
     private String img;   //图片
@@ -11,7 +11,7 @@ public class Food {
     public String toString() {
         return "Food{" +
                 "id=" + id +
-                ", FoodName='" + foodname + '\'' +
+                ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", message='" + message + '\'' +
                 ", img='" + img + '\'' +
@@ -26,12 +26,12 @@ public class Food {
         this.id = id;
     }
 
-    public String getFoodname() {
-        return foodname;
+    public String getName() {
+        return name;
     }
 
-    public void setFoodname(String foodName) {
-        this.foodname = foodName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {

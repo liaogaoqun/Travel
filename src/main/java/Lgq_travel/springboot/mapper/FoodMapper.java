@@ -17,4 +17,13 @@ public interface FoodMapper {
     Integer postCountByQueryVo(QueryVo vo);
     //返回分页结果集
     List<Food> selectPostListByQueryVo(QueryVo vo);
+
+    //新增食物
+    void addFood(Food Food);
+    //删除
+    void deleteById(Integer id);
+    //更新
+    int updateFood(Food Food);
+    //通过id查找
+
 }

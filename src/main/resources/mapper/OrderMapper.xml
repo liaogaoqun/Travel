@@ -84,4 +84,35 @@
         where orderno = #{orderno}
     </update>
 
+    <update id="updateStateById" parameterType="Integer">
+        update `order`
+        set state = 2
+        where id = #{id}
+    </update>
+
+    <update id="updateStateToPayById" parameterType="Integer">
+        update `order`
+        set state = 1
+        where id = #{id}
+    </update>
+
+    <select id="getOrderByNo" parameterType="String" resultMap="OrderMap">
+        select o.id,
+               o.orderno,
+               o.ticketno,
+               o.num,
+               o.price,
+               o.state,
+               t.name,
+               t.sid,
+               s.name
+               u.username,
+               s.id
+        from `order` o
+                 left join ticket t on t.id = o.tid
+                 left join scenic s on t.fid = s.id
+                 left join user u on u.userid = o.uid
+        where o.orderno = #{orderno}
+    </select>
+
 </mapper>

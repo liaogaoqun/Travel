@@ -13,8 +13,11 @@ public class Ticket {
         this.name = name;
     }
 
-    private Double cprice;  //市场价
-    private Double dprice; //优惠价
+    /*private Double cprice;  //市场价
+    private Double dprice; //优惠价*/
+
+    private double Dprice;
+    private double Cprice;
     private String message; //详情信息
     private Integer dpNum;   //总票数
     private Integer cpNum;  //已售票数
@@ -26,8 +29,8 @@ public class Ticket {
                 "id=" + id +
                 ", sid=" + sid +
                 ", name='" + name + '\'' +
-                ", cprice=" + cprice +
-                ", dprice=" + dprice +
+                ", Dprice=" + Dprice +
+                ", Cprice=" + Cprice +
                 ", message='" + message + '\'' +
                 ", dpNum=" + dpNum +
                 ", cpNum=" + cpNum +
@@ -51,20 +54,20 @@ public class Ticket {
         this.sid = sid;
     }
 
-    public Double getCprice() {
-        return cprice;
+    public double getDprice() {
+        return Dprice;
     }
 
-    public void setCprice(Double cprice) {
-        this.cprice = cprice;
+    public void setDprice(double dprice) {
+        Dprice = dprice;
     }
 
-    public Double getDprice() {
-        return dprice;
+    public double getCprice() {
+        return Cprice;
     }
 
-    public void setDprice(Double dprice) {
-        this.dprice = dprice;
+    public void setCprice(double cprice) {
+        Cprice = cprice;
     }
 
     public String getMessage() {

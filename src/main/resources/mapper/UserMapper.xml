@@ -30,7 +30,6 @@
 
     <insert id="userRegister" parameterType="User">
         insert into user(
-        name,
         username,
         password,
         email,
@@ -40,7 +39,6 @@
         state
         )
         <trim prefix=" values(" suffix=")" suffixOverrides=",">
-            #{name,jdbcType=VARCHAR}
             #{username,jdbcType=VARCHAR},
             #{password,jdbcType=VARCHAR},
             #{email,jdbcType=VARCHAR},
@@ -59,15 +57,41 @@
     <update id="UpdateInfo" parameterType="User">
         update user
         <set>
+            <if test="name != null">name=#{name,jdbcType=VARCHAR},</if>
             <if test="username != null">username=#{username,jdbcType=VARCHAR},</if>
             <if test="password != null">password=#{password,jdbcType=VARCHAR},</if>
-            <if test="tephone != null">telephone=#{tephone,jdbcType=VARCHAR},</if>
+            <if test="tephone != null">tephone=#{tephone,jdbcType=VARCHAR},</if>
             <if test="birthday != null">birthday=#{birthday,jdbcType=TIMESTAMP},</if>
             <if test="sex != null">sex=#{sex,jdbcType=VARCHAR},</if>
-            <if test="email != null">Email=#{email,jdbcType=VARCHAR}</if>
+            <if test="email != null">email=#{email,jdbcType=VARCHAR}</if>
         </set>
         where userid = #{userid};
     </update>
 
+    <select id="customerCountByQueryVo" parameterType="QueryVo" resultType="int">
+        select count(1) from user
+    </select>
+
+    <select id="selectCustomerListByQueryVo" parameterType="QueryVo" resultType="User">
+        select * from user
+        <where>
+            <if test="name != null and name != ''">
+                username like "%"#{name}"%"
+            </if>
+        </where>
+        limit #{startRow},#{size}
+    </select>
+
+    <update id="updateStateById" parameterType="String">
+        update user
+        set state = 0
+        where userid = #{id}
+    </update>
+
+    <update id="updateState1ById" parameterType="String">
+        update user
+        set state = 1
+        where userid = #{id}
+    </update>
 
 </mapper>

@@ -21,5 +21,8 @@ public interface TicketMapper {
     Double selectPriceBySid(Integer sid);
     //通过票id获得Ticket
     Ticket getTicketById(Integer id);
+    void deleteById(Integer id);
+    void addTicket(Ticket ticket);
+    int updateTicket(Ticket ticket);
 
 }

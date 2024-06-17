@@ -2,6 +2,7 @@ package Lgq_travel.springboot.interceptor;
 
 
 import Lgq_travel.springboot.entity.Admin;
+import Lgq_travel.springboot.entity.Manager;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,7 +15,7 @@ public class ManagerLoginInterceptor implements HandlerInterceptor {
         // 判断session
         HttpSession session  = request.getSession();
         // 从session中取出用户身份信息
-        Admin managerInfo = (Admin) session.getAttribute("manager");
+        Manager managerInfo = (Manager) session.getAttribute("manager");
         // session存在时，放行
         if (managerInfo!=null) {
             return true;

@@ -140,6 +140,12 @@ body {
                                 <input type="date" class="form-control" id="edit_date" value="${user.birthday}"  placeholder="出生日期" name="birthday">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="edit_name" class="col-sm-2 control-label">电话号码</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="${user.tephone}" id="edit_tephone" placeholder="电话号码" name="tephone">
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

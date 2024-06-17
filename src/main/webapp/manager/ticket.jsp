@@ -97,8 +97,8 @@
                                         <td>${row.scenic.name}</td>
                                         <td>${row.name}</td>
                                         <td>${row.dprice}</td>
-                                        <td>${row.mprice}</td>
-                                        <td>${row.explain}</td>
+                                        <td>${row.cprice}</td>
+                                        <td>${row.message}</td>
                                         <td>
                                             <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editDialog" onclick="editTicket(${row.id})">修改</a>
                                             <a href="#" class="btn btn-danger btn-xs" onclick="deleteTicket(${row.id})">删除</a>
@@ -142,7 +142,7 @@
                             <div class="form-group">
                                 <label for="add_explain" class="col-sm-2 control-label">门票说明</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="add_explain" placeholder="门票说明" name="explain">
+                                    <input type="text" class="form-control" id="add_explain" placeholder="门票说明" name="message">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -154,12 +154,12 @@
                             <div class="form-group">
                                 <label for="add_mprice" class="col-sm-2 control-label">网站价格</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="add_mprice" placeholder="网站价格" name="mprice">
+                                    <input type="text" class="form-control" id="add_mprice" placeholder="网站价格" name="cprice">
                                 </div>
                             </div>
                             <div class="form-group" id="test">
                                 <label for="add_scenicname" class="col-sm-2 control-label" style="margin-right: 15px">所属景点</label>
-                                <select	class="form-control" id="add_scenicname" placeholder="所属景点" style="width:466px;padding-right: 15px" name="fid">
+                                <select	class="form-control" id="add_scenicname" placeholder="所属景点" style="width:466px;padding-right: 15px" name="sid">
                                 </select>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                             <div class="form-group">
                                 <label for="edit_explain" class="col-sm-2 control-label">门票说明</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_explain" placeholder="门票说明" name="explain">
+                                    <input type="text" class="form-control" id="edit_explain" placeholder="门票说明" name="message">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -207,13 +207,13 @@
                             <div class="form-group">
                                 <label for="edit_mprice" class="col-sm-2 control-label">网站价格</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_mprice" placeholder="网站价格" name="mprice">
+                                    <input type="text" class="form-control" id="edit_mprice" placeholder="网站价格" name="cprice">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="edit_scenicName" class="col-sm-2 control-label">所属景点</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_scenicName" placeholder="所属景点" name="mprice">
+                                    <input type="text" class="form-control" id="edit_scenicName" placeholder="所属景点" name="cprice">
                                 </div>
                             </div>
                         </div>
@@ -270,9 +270,9 @@
                 success:function(data) {
                     $("#edit_id").val(data.id);
                     $("#edit_name").val(data.name);
-                    $("#edit_explain").val(data.explain);
+                    $("#edit_explain").val(data.message);
                     $("#edit_dprice").val(data.dprice);
-                    $("#edit_mprice").val(data.mprice);
+                    $("#edit_mprice").val(data.cprice);
                     $("#edit_scenicName").val(data.scenic.name);
                 }
             });

@@ -10,32 +10,32 @@
         </where>
     </sql>
 
-    <insert id="insertManager" parameterType="com.neutrino.entity.Manager">
-        insert into manager(managerid,name,password,flag)
+    <insert id="insertManager" parameterType="Manager">
+        insert into admin(managerid,name,password,flag)
         VALUES (
-                   #{managerid,jdbcType=VARCHAR},
+                   #{managerid,jdbcType=INTEGER},
                    #{name,jdbcType=VARCHAR},
                    #{password,jdbcType=VARCHAR},
                    #{flag,jdbcType=NUMERIC}
                )
     </insert>
 
-    <select id="confirmManager" parameterType="com.neutrino.entity.Manager" resultType="com.neutrino.entity.Manager">
+    <select id="confirmManager" parameterType="Manager" resultType="Manager">
         select *
-        from manager
+        from admin
         <include refid="sql_where_Clause"/>
     </select>
 
-    <select id="getAllManager" parameterType="String" resultType="com.neutrino.entity.Manager">
+    <select id="getAllManager" parameterType="String" resultType="Manager">
         select *
-        from manager
+        from admin
         <where>
             <if test="_parameter != null">and name=#{_parameter}</if>
         </where>
     </select>
 
-    <delete id="deleteManager" parameterType="String">
-        delete from manager
+    <delete id="deleteManager" parameterType="Integer">
+        delete from admin
         where managerid = #{id}
     </delete>
 

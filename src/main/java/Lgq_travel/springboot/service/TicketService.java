@@ -15,4 +15,7 @@ public interface TicketService {
     double selectTickerPriceBySid(Integer sid);
     //通过id返回Ticket
     Ticket getTicketById(Integer id);
+    void deleteById(Integer id);
+    void addTicket(Ticket ticket);
+    int updateTicket(Ticket ticket);
 }

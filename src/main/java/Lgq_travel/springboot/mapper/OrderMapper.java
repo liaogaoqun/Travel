@@ -20,4 +20,10 @@ public interface OrderMapper {
     int insertOrder(Order order);
     //通过订单编号更改订单状态
     int updateStateByOno(String orderno);
+
+    int updateStateById(Integer id);
+
+    void updateStateToPayById(Integer id);
+
+    Order getOrderByNo(String orderno);
 }
