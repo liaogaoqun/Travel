@@ -30,8 +30,8 @@
     </div>
 </div>
 <!-- 导航条 -->
-<div class="container-fluid"  style="margin-top: +50px">
-    <nav class="navbar navbar-inverse" style="background-color: #ffffff;">
+<div class="container-fluid"  style="margin-top: 35px;border: none">
+    <nav class="navbar navbar-inverse" style="background-color: #ffffff;border: none">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -46,12 +46,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li style=" border-bottom: 3px solid #ff0000; /* 设置底部边框 */
+                    <li style=" border-bottom: 1px solid #bb4242; /* 设置底部边框 */
            "><a href="${pageContext.request.contextPath }/user"><p style="color: red;font-size:40px;font-weight: bold;font-family: 宋体 ">|网站首页    |</p></a></li>
-                    <li style=" border-bottom: 3px solid #ff0000;"><a href="${pageContext.request.contextPath }/getScenicPageForUser"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">红色景点   |</p></a></li>
-                    <li style=" border-bottom: 3px solid #ff0000;"><a href="${pageContext.request.contextPath }/getFoodPageForUser"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">红色美食    |</p></a></li>
-                    <li style=" border-bottom: 3px solid #ff0000;"><a href="${pageContext.request.contextPath }/userInfoPage"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">个人信息    |</p></a></li>
-                    <li style=" border-bottom: 3px solid #ff0000;"><a href="${pageContext.request.contextPath }/listOrder"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">我的订单</p></a></li>
+                    <li style=" border-bottom: 1px solid #ff0000;"><a href="${pageContext.request.contextPath }/getScenicPageForUser"><p style="color: #fc0000;font-size:30px;font-weight: bold;font-family: 宋体">红色景点   |</p></a></li>
+                    <li style=" border-bottom: 1px solid #ff0000;"><a href="${pageContext.request.contextPath }/getFoodPageForUser"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">红色美食    |</p></a></li>
+                    <li style=" border-bottom: 1px solid #ff0000;"><a href="${pageContext.request.contextPath }/userInfoPage"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">个人信息    |</p></a></li>
+                    <li style=" border-bottom: 1px solid #ff0000;"><a href="${pageContext.request.contextPath }/listOrder"><p style="color: red;font-size:30px;font-weight: bold;font-family: 宋体">我的订单</p></a></li>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
