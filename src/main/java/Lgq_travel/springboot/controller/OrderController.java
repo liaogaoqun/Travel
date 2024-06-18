@@ -71,7 +71,6 @@ public class OrderController {
         System.out.println(user);
         orderService.insertOrder(order);
         return "user/scenicList";
-        /*return "redirect:user/orderList";*/
     }
 
 
