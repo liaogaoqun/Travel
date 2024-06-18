@@ -8,7 +8,7 @@
         height: 50px;
         line-height: 50px;
         margin-left: -50px;
-        background: #fc0202;
+        background: #a5291f;
     }
 
     .div-head2 {
@@ -27,7 +27,7 @@
     }
 
     .ul-li-p {
-        color: red;
+        color: #a5291f;
         font-size: 40px;
         font-weight: bold;
         font-family: 宋体
@@ -114,7 +114,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="margin-left: 100px">
                     <li style=" border-bottom: 1px solid #bb4242; /* 设置底部边框 */
            "><a href="${pageContext.request.contextPath }/user"><p
                     class="ul-li-p">|网站首页 |</p></a>

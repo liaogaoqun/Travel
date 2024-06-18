@@ -53,6 +53,28 @@ public class OrderController {
         return "user/order";
     }
 
+    //用户点击预约弹到预约成功界面
+    @RequestMapping(value = "/getOrderInfo1")
+    public String Order(Model model,Integer id,Order order,HttpServletRequest request){
+        Ticket ticket = ticketService.getTicketById(id);
+        //设置总价为0
+        order.setPrice(0);
+        System.out.println(order);
+        //使用十六机制随机数设置订单编号和取票号
+        order.setOrderno(UUID.randomUUID().toString());
+        order.setTicketno(UUID.randomUUID().toString());
+
+        User user = (User) request.getSession().getAttribute("user");
+        order.setUid(user.getUserid());
+        //设置为发票状态
+        order.setState(1);
+        System.out.println(user);
+        orderService.insertOrder(order);
+        return "user/scenicList";
+        /*return "redirect:user/orderList";*/
+    }
+
+
     /**
      * 用户查看自己的订单列表
      */

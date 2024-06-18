@@ -50,7 +50,7 @@
                                         <div class="js_r">
                                             <p>&nbsp;</p>
                                             <p>
-                                                <span class="fn_o">￥</span><b>728</b>起
+                                                <span class="fn_o">￥</span><b>0</b>起
                                             </p>
                                             <a href="#" class="btn btn-default btn-info" data-toggle="modal" data-target="#shouldKnowDialog" >购买须知</a>
                                         </div>
@@ -92,16 +92,36 @@
                                             </div>
                                             <div class="js_c">
                                                 <p>
-                                                    <font style="color: #9d9d9d">${ticket.DPrice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <font style="color: #9d9d9d">${ticket.CPrice}</font>
+                                                    <font style="color: #9d9d9d">${ticket.dprice}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <font style="color: #9d9d9d">${ticket.cprice}</font>
                                                 </p>
                                             </div>
                                             <div class="js_r" style="padding-right: 11px; ">
-                                                <p>
+                                                <c:choose>
+                                                    <c:when test="${ticket.cprice==0}">
+                                                        <p>
+                                                        <form action="${pageContext.request.contextPath }/getOrderInfo1"
+                                                              method=post>
+                                                            <input type="submit" value="预约" class="btn btn-default btn-info"
+                                                                   style="padding: 3px 6px;font-size: 11px" >
+                                                        </form>
+                                                        </p>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <p>
+                                                        <form action="${pageContext.request.contextPath }/getOrderInfo"
+                                                              method=post>
+                                                            <input type="submit" value="购买" class="btn btn-default btn-info"
+                                                                   style="padding: 3px 6px;font-size: 11px">
+                                                        </form>
+                                                        </p>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                               <%-- <p>
                                                 <form action="${pageContext.request.contextPath }/getOrderInfo" method=post>
                                                     <input  type="submit" value="购买" class="btn btn-default btn-info" style="padding: 3px 6px;font-size: 11px">
                                                 </form>
-                                                </p>
+                                                </p>--%>
                                             </div>
                                         </div>
                                     </c:forEach>
