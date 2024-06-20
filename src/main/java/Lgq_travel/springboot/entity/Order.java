@@ -113,5 +113,13 @@ public class Order {
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
     }
+
+    public Scenic getScenic() {
+        return scenic;
+    }
+
+    public void setScenic(Scenic scenic) {
+        this.scenic = scenic;
+    }
 }
 

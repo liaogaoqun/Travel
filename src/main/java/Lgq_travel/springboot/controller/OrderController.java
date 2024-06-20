@@ -68,6 +68,9 @@ public class OrderController {
         order.setUid(user.getUserid());
         //设置为发票状态
         order.setState(1);
+        System.out.println("返回ticket状态:"+ticketService.getTicketById(id));
+//        order.setTicket(ticketService.getTicketById(id));
+        order.setTid(id);
         System.out.println(user);
         orderService.insertOrder(order);
         return "user/scenicList";
@@ -86,6 +89,7 @@ public class OrderController {
         Page<Order> page = orderService.selectOrderPageByQueryVo(vo);
         System.out.println(page.getRows());
         model.addAttribute("page", page);
+        System.out.println("订单页面数据"+page);
         return "user/orderList";
     }
 

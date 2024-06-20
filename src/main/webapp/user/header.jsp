@@ -34,12 +34,6 @@
     }
 </style>
 <div class="container-fluid">
-    <%--<div class="col-md-1" style="padding-top: 4px">
-        <img style="height: 50px;width: 110px" src="../image/logo1.png" />
-    </div>
-    <div class="col-md-4" style="padding-left: 0px;padding-top: 4px">
-        <img src="../image/bdlogo.png" />
-    </div>--%>
     <div class="div-head1">
         <div class="div-head3-left">
             <ol class="list-inline">
@@ -80,9 +74,6 @@
     <%--    line-height: 50px;--%>
     <%--    margin-left: -50px;--%>
     <%--    background: #B3100f;"></div>--%>
-    <%--    <div class="col-md-3">--%>
-    <%--        &lt;%&ndash;<img src="image/logor.png" />&ndash;%&gt;--%>
-    <%--    </div>--%>
     <%--<div class="col-md-4" style="padding-left:20px;padding-top:20px;font-size: 17px;float: right;">
         <ol class="list-inline">
             <c:if test="${empty sessionScope.user }">

@@ -2,9 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div class="container-fluid">
-    <%--<div style="margin-top:30px;">
-        <img src="../image/tail.PNG" width="100%" height="78" alt="我们的优势" title="我们的优势" />
-    </div>--%>
 	<div>
 		<br/>
 		<br/>

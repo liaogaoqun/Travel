@@ -229,7 +229,6 @@
                     </a>
                     <div class="carousel-caption">
                         <!-- 轮播图上的文字 -->
-                        <%--<img src="../image/lbw.png">--%>
                         <a href="../html/bdstory1.html" target="_blank"
                            style="margin-left: 0px;color:white;font-size: 40px;">
                             创新文旅融合传承红色文化
@@ -243,7 +242,7 @@
                     </a>
                     <div class="carousel-caption">
                         <!-- 轮播图上的文字 -->
-                        <%--<img src="../image/lbw.png">--%>
+
                         <a href="../html/bdstory2.html" target="_blank"
                            style="margin-left: 0px;color:white;font-size: 40px;">
                             讲好有温度有特色的红色故事
@@ -256,7 +255,6 @@
                     </a>
                     <div class="carousel-caption">
                         <!-- 轮播图上的文字 -->
-                        <%--<img src="../image/lbw.png">--%>
                         <a href="../html/bdstory3.html" target="_blank"
                            style="margin-left: 0px;color:white;font-size: 40px;">
                             用心用情讲述好英烈故事

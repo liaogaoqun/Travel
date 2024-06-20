@@ -2,6 +2,7 @@ package Lgq_travel.springboot.Text;
 
 import Lgq_travel.springboot.entity.Food;
 import Lgq_travel.springboot.entity.User;
+import Lgq_travel.springboot.mapper.TicketMapper;
 import Lgq_travel.springboot.service.*;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.extra.qrcode.QrCodeUtil;
@@ -30,6 +31,8 @@ public class Text {
     @Autowired
     private OrderService orderService;
     Food food = new Food();
+    @Autowired
+    private TicketMapper ticketMapper;
     @Test
     public void he() {
 //    System.out.println(scenicService.selectScenicList());
@@ -53,9 +56,12 @@ public class Text {
 ////        foodService.addFood(food);
 //        foodService.updateFood(food);
 //        System.out.println( foodService.getFoodById(4));
-        user.setUserid(5);
-        user.setName("廖");
-        userService.UpdateInfo(user);
+//        user.setUserid(5);
+//        user.setName("廖");
+//        userService.UpdateInfo(user);
+        System.out.println(ticketService.selectTickerPriceBySid(2));
+//        System.out.println(ticketMapper.selectPriceBySid(1));
     }
+
 
 }

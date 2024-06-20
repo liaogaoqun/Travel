@@ -116,12 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <%--服务保障图片--%>
-                <div class="col-md-4 column" style="width:260px;">
-                    <div class="col-md-4 column" style="width:260px;border:1px solid #E8E8E8">
-                        <img src="../image/fwbz.png">
-                    </div>
-                </div>
+
             </div>
 
 

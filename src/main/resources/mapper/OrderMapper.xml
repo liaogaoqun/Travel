@@ -51,8 +51,8 @@
         select
         o.id,o.orderno,o.ticketno,o.num,o.price,o.state,t.name,s.name,u.username
         from `order` o
-        left join ticket t on t.id=o.tid
-        left join scenic s on t.sid=s.id
+        left join `ticket` t on t.id=o.tid
+        left join `scenic` s on t.sid=s.id
         left join user u on u.userid=o.uid
         <where>
             <if test="name != null and name != ''">

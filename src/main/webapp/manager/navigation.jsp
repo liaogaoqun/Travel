@@ -12,13 +12,10 @@
                 class="icon-bar"></span> <span class="icon-bar"></span> <span
                 class="icon-bar"></span>
         </button>
-        <div class="col-md-1" style="padding-top: 4px">
+        <<%--div class="col-md-1" style="padding-top: 4px">
             <img style="height: 50px;width: 110px" src="image/logo1.png" />
         </div>
-        <div class="col-md-4" style="padding-left: 5px;padding-top: 4px">
-            <img src="image/mlogo.png" />
-        </div>
-       <%-- <a class="navbar-brand" href="index.html">&lt;%&ndash;<font color="#F6FFFF">&ndash;%&gt;5爱旅游网管理系统&lt;%&ndash;</font>&ndash;%&gt;</a>--%>
+             <%-- <a class="navbar-brand" href="index.html">&lt;%&ndash;<font color="#F6FFFF">&ndash;%&gt;5爱旅游网管理系统&lt;%&ndash;</font>&ndash;%&gt;</a>--%>
     </div>
     <!-- /.navbar-header -->
 
